@@ -111,3 +111,8 @@ footer {
   font-family: monospace;
   text-align: center;
 }
+
+i:hover {
+  color: #0dcaf0;
+  transform: scale(1.2);
+}
