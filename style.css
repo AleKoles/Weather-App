@@ -68,6 +68,10 @@ section {
   padding-top: 20px;
 }
 
+#sky {
+  text-transform: capitalize;
+}
+
 .degrees {
   color: rgb(155, 151, 151);
   font-size: 18px;
