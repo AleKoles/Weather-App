@@ -17,13 +17,6 @@ body {
   color: grey;
 }
 
-.pic {
-  background-image: url(img/sunny.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-}
-
 /* header styles */
 header {
   display: flex;
@@ -58,6 +51,15 @@ section {
   color: grey;
   padding-bottom: 20px;
   padding-top: 20px;
+}
+
+.top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.pic img {
+  width: 100px;
 }
 
 .weather-info {
