@@ -39,47 +39,7 @@ let months = [
 let month = document.querySelector("#month");
 month.innerHTML = months[now.getMonth()];
 
-// search engine & temperature
-
-let form = document.querySelector("#form");
-
-let currentCity = document.querySelector("#current-city");
-let temp = document.querySelector("#day-temp");
-let sky = document.querySelector("#sky");
-let rain = document.querySelector("#rain");
-let wind = document.querySelector("#wind");
-let icon = document.querySelector("#weather-icon");
-
-function displayWeather(response) {
-  let temperature = Math.round(response.data.main.temp);
-  temp.innerHTML = temperature;
-  currentCity.innerHTML = response.data.name;
-  rain.innerHTML = response.data.main.humidity;
-  wind.innerHTML = Math.round(response.data.wind.speed);
-  sky.innerHTML = response.data.weather[0].description;
-  icon.setAttribute(
-    "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-  );
-}
-
-function search(city) {
-  let apiKey = "3818ef8d96aa3cbe7d3ceb323fd21a5c";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(displayWeather);
-}
-
-function handleSubmit(event) {
-  event.preventDefault();
-  let cityInputElement = document.querySelector("#input-city");
-  search(cityInputElement.value);
-}
-
-form.addEventListener("submit", handleSubmit);
-
-search("Kyiv");
-
-// current position button
+// current position weather
 
 let currentB = document.querySelector("#current-button");
 currentB.addEventListener("click", currentPositionWeather);
@@ -101,6 +61,66 @@ function currentPositionWeather() {
 
   navigator.geolocation.getCurrentPosition(getPosition);
 }
+
+// search engine & weather
+
+let form = document.querySelector("#form");
+
+let currentCity = document.querySelector("#current-city");
+let temp = document.querySelector("#day-temp");
+let sky = document.querySelector("#sky");
+let rain = document.querySelector("#rain");
+let wind = document.querySelector("#wind");
+let icon = document.querySelector("#weather-icon");
+
+function displayWeather(response) {
+  celsiusTemp = response.data.main.temp;
+  temp.innerHTML = Math.round(celsiusTemp);
+  currentCity.innerHTML = response.data.name;
+  rain.innerHTML = response.data.main.humidity;
+  wind.innerHTML = Math.round(response.data.wind.speed);
+  sky.innerHTML = response.data.weather[0].description;
+  icon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+}
+
+function search(city) {
+  let apiKey = "3818ef8d96aa3cbe7d3ceb323fd21a5c";
+  let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(url).then(displayWeather);
+}
+
+function pressSubmit(event) {
+  event.preventDefault();
+  let cityInput = document.querySelector("#input-city");
+  search(cityInput.value);
+}
+
+form.addEventListener("submit", pressSubmit);
+
+// fahrenheit - celsius
+
+function displayFahrenheit() {
+  event.preventDefault();
+  fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
+  temp.innerHTML = Math.round(fahrenheitTemp);
+}
+
+function displayCelsius() {
+  temp.innerHTML = Math.round(celsiusTemp);
+}
+
+let celsiusTemp = null;
+
+let fahrenheit = document.querySelector("#fahrenheit");
+fahrenheit.addEventListener("click", displayFahrenheit);
+
+let celsius = document.querySelector("#celsius");
+celsius.addEventListener("click", displayCelsius);
+
+search("Kyiv");
 
 // degrees
 // let celsius = document.querySelector("#celsius");
