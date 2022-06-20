@@ -1,0 +1,58 @@
+body {
+  font: 100% Helvetica, sans-serif;
+  color: white;
+  background: url("img/summer.jpg") no-repeat fixed center;
+  background-size: cover;
+}
+body p {
+  font-size: 18px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 60px auto;
+  max-width: 600px;
+  background: rgba(104, 105, 105, 0.568);
+  border-radius: 10px;
+}
+.container header, .container footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 10px;
+}
+.container header .my-button, .container footer .my-button {
+  border: 1px solid white;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+.container header .my-button:hover, .container footer .my-button:hover {
+  border: 1px solid green;
+  color: green;
+}
+.container main {
+  margin: 10px 40px;
+}
+.container main .top {
+  text-align: center;
+}
+.container main .top .degrees a {
+  color: rgb(226, 231, 231);
+  text-decoration: none;
+}
+.container main .top .degrees a:hover {
+  color: white;
+}
+.container main .weather-info {
+  display: flex;
+  direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+.container footer {
+  justify-content: center;
+}/*# sourceMappingURL=app.css.map */

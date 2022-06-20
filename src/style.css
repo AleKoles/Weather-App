@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,500;1,300&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #b2e3ed;
+  font-family: "Roboto", sans-serif;
+  background: linear-gradient(0.25turn, #b2e3ed, #fff, #fff, #fff, #b2e3ed);
+}
+
+.container {
+  margin: 0px auto;
+  padding-top: 60px 40px;
+  max-width: 800px;
+  min-width: 320px;
+  background: none;
+  color: grey;
+}
+
+/* header styles */
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 40px;
+}
+
+.form-control {
+  border: 1px solid #0dcaf0;
+}
+
+input.search-button {
+  border: none;
+  background: none;
+  margin-top: 5px;
+  width: 30px;
+}
+
+img {
+  width: 30px;
+  background: none;
+}
+
+/* main section styles */
+section {
+  padding: 40px 200px;
+}
+.current-city {
+  text-transform: uppercase;
+  color: grey;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+.top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.pic img {
+  width: 100px;
+}
+
+.weather-info {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  color: grey;
+  font-size: 18px;
+  padding-top: 20px;
+}
+
+#sky {
+  text-transform: capitalize;
+}
+
+.degrees {
+  color: rgb(155, 151, 151);
+  font-size: 18px;
+  text-decoration: none;
+}
+
+a {
+  color: rgb(155, 151, 151);
+  font-size: 18px;
+  text-decoration: none;
+}
+
+#celsius:hover {
+  color: rgb(102, 101, 101);
+}
+
+#fahrenheit:hover {
+  color: rgb(102, 101, 101);
+}
+
+.main p {
+  margin: 0;
+}
+
+.card {
+  border: none;
+  background: none;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.card img {
+  width: 30px;
+  margin: 0 auto;
+}
+
+/* five days styles */
+footer {
+  padding-top: 80px;
+  padding-bottom: 30px;
+  font-family: monospace;
+  text-align: center;
+}
+
+i:hover {
+  color: #0dcaf0;
+  transform: scale(1.2);
+}

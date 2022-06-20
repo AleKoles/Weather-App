@@ -1,0 +1,62 @@
+$font-stack: Helvetica, sans-serif;
+$primary-color: white;
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+  background: url("img/summer.jpg") no-repeat fixed center;
+  background-size: cover;
+  p {
+    font-size: 18px;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 60px auto;
+  max-width: 600px;
+  background: rgba(104, 105, 105, 0.568);
+  border-radius: 10px;
+  header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 10px;
+    .my-button {
+      border: 1px solid white;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 5px;
+      text-decoration: none;
+      &:hover {
+        border: 1px solid green;
+        color: green;
+      }
+    }
+  }
+  main {
+    margin: 10px 40px;
+    .top {
+      text-align: center;
+      .degrees a {
+        color: rgb(226, 231, 231);
+        text-decoration: none;
+        &:hover {
+          color: white;
+        }
+      }
+    }
+    .weather-info {
+      display: flex;
+      direction: row;
+      align-items: center;
+      justify-content: space-around;
+    }
+  }
+  footer {
+    @extend header;
+    justify-content: center;
+  }
+}
