@@ -34,15 +34,16 @@ body {
         border: 1px solid green;
         color: green;
       }
+      
     }
   }
   main {
     margin: 10px 40px;
     .top {
       text-align: center;
-      .degrees a {
+      .degrees{
         color: rgb(226, 231, 231);
-        text-decoration: none;
+        text-decoration: none
         &:hover {
           color: white;
         }
